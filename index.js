@@ -6,7 +6,7 @@ const uuid = require('uuid');
 const server = http.createServer((req, res) => {
   // Set up the endpoint to handle the POST request
   let count=0;
-  if (req.method === 'POST' && req.url === '/upload') {
+  if (req.method === 'POST') {
     // Validate the 'Content-Type' header to ensure that the request is an image file
     if (req.headers['content-type'] !== 'image/png' && req.headers['content-type'] !== 'image/jpeg') {
       res.statusCode = 400;
